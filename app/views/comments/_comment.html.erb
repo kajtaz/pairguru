@@ -1,0 +1,9 @@
+<p><%= comment.content %></p>
+<p> Posted by <%= comment.user.email %> <%= time_ago_in_words(comment.created_at) %> ago </p>
+<% if user_signed_in? %>
+<% if comment.user_id == current_user.id %>
+<p><%= link_to "Edit", edit_movie_comment_path(comment.movie, comment) %></p>
+<p><%= link_to "Delete", movie_comment_path(comment.movie, comment), method: :delete, data: { confirm: "are you sure?" } %></p>
+
+<% end %>
+<% end %>

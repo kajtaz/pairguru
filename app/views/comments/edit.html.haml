@@ -1,0 +1,4 @@
+%h1 Edit Comment
+= simple_form_for([@movie, @comment]) do |f|
+  = f.input :content, label: "comment"
+  = f.button :submit
